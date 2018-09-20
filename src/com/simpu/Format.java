@@ -13,6 +13,7 @@ public class Format
     public Format(String s)
     {
         key =s;
+        encrypt = true;
     }
     public String UserAnnounce(String username)
     {
