@@ -1,5 +1,7 @@
 package com.simpu;
 
+import java.util.Scanner;
+
 public class Main
 {
     static Session currentSession;

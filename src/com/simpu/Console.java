@@ -11,15 +11,18 @@ public class Console
     }
     public void PrintSystem(String string)
     {
-        System.out.println("# "+string);
+        System.out.println();
+        System.out.print("# "+string);
     }
     public void PrintError(String string)
     {
-        System.out.println("!(ERROR) "+string);
+        System.out.println();
+        System.out.print("!(ERROR) "+string);
     }
     public void PrintTabbed(String string)
     {
-        System.out.println('\t'+string);
+        System.out.println();
+        System.out.print('\t'+string);
     }
     public void PrintTabbedSameLine(String string)
     {
@@ -27,11 +30,13 @@ public class Console
     }
     public void PrintDebug(String s)
     {
-        System.out.println("<DEBUG>"+s);
+        System.out.println();
+        System.out.print("<DEBUG>"+s);
     }
     public void Print(String s)
     {
-        System.out.println(s);
+        System.out.println();
+        System.out.print(s);
     }
     public void PrintLine()
     {
@@ -41,7 +46,15 @@ public class Console
     {
         System.out.print(s);
     }
-
+    public void PrintReply()
+    {
+        System.out.println();
+        System.out.print("\tReply --> ");
+    }
+    public void PrintReplySingleLine()
+    {
+        System.out.print("\tReply --> ");
+    }
 
     public String GetInput()
     {
