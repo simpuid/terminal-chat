@@ -18,6 +18,6 @@ public class Format
     }
     public String Message(String name,String message)
     {
-        return ("@"+name+":"+message);
+        return (headerUserMessage+":"+name+":"+message);
     }
 }

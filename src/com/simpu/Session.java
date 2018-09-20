@@ -46,6 +46,14 @@ public class Session
         // Start the Listener
         listener = new Listener(code,console,this);
         listener.start();
+
+        while (true)
+        {
+            console.PrintNotLine("Reply-->");
+            String message = console.GetInput();
+            Sender sender = new Sender(format.Message(name,message),websiteURL+code);
+            sender.start();
+        }
     }
 
     public void Dispose()
@@ -58,7 +66,6 @@ public class Session
         try
         {
             URL url = new URL(websiteURL+code);
-            console.PrintTabbedSameLine(websiteURL+code+"   "+format.UserAnnounce(name));
             HttpURLConnection connection = (HttpURLConnection)url.openConnection();
             connection.setRequestMethod("PUT");
             connection.setConnectTimeout(5000);
@@ -82,12 +89,16 @@ public class Session
         StringBuilder stringBuilder = new StringBuilder();
         if (s[0].equals(Format.headerUserMessage))
         {
-            stringBuilder.append("@");
-            stringBuilder.append(s[1]);
-            stringBuilder.append(":");
-            stringBuilder.append(s[2]);
+            if (!s[1].equals(name))
+            {
+                stringBuilder.append("@");
+                stringBuilder.append(s[1]);
+                stringBuilder.append(" : ");
+                stringBuilder.append(s[2]);
+                console.PrintLine();
+                console.Print(stringBuilder.toString());
+                console.PrintNotLine("Reply-->");
+            }
         }
-        console.Print(string);
-        console.Print(stringBuilder.toString());
     }
 }

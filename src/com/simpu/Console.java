@@ -33,6 +33,14 @@ public class Console
     {
         System.out.println(s);
     }
+    public void PrintLine()
+    {
+        System.out.println();
+    }
+    public void PrintNotLine(String s)
+    {
+        System.out.print(s);
+    }
 
 
     public String GetInput()
