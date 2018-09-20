@@ -1,7 +1,5 @@
 package com.simpu;
 
-import java.util.Scanner;
-
 public class Format
 {
     public static String headerUserAnnounce = "newuserconnected";
